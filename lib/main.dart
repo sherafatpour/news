@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:news/home/home_binding.dart';
+import 'package:news/bindings/home_binding.dart';
 import 'package:news/home/home_page.dart';
 import 'package:news/util/app_pages.dart';
 import 'package:news/util/rout_name.dart';

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:news/models/dio_exeption_model.dart';
+import 'package:news/models/dio/dio_exeption_model.dart';
 
 class DioExceptions implements Exception{
 

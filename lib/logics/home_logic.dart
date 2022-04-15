@@ -6,7 +6,7 @@ import 'package:news/util/error_message.dart';
 
 class HomeLogic extends GetxController {
   late Dio dio;
-
+  var selectedIndex = 0.obs;
   @override
   void onInit() {
     dio = Dio();
