@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:news/logics/home_logic.dart';
+import 'package:news/logics/container_logic.dart';
 
 class BottomNavigation extends StatelessWidget {
    BottomNavigation({Key? key}) : super(key: key);
-  final HomeLogic logic = Get.find<HomeLogic>();
+  final ContainerLogic logic = Get.find<ContainerLogic>();
 
   @override
   Widget build(BuildContext context) {

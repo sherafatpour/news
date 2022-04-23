@@ -5,7 +5,7 @@ class PostModel {
       this.name, this.img);
 
   Map<String, dynamic> toMap() {
-    var map = <String, dynamic>{};
+    var map = Map<String, dynamic>();
 
     map['id'] = id;
     map['title'] = title;

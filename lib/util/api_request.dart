@@ -8,10 +8,18 @@ import 'package:news/util/dio_exception.dart';
 
 
 class ApiRequest {
-  final String url;
-  final Map<String, dynamic> headers;
+  late String url;
+  late Map<String, dynamic> headers;
 
-  ApiRequest(this.url, this.headers);
+  static final ApiRequest _instance = ApiRequest._();
+
+  ApiRequest._();
+
+  factory ApiRequest(String url,Map<String, dynamic> headers ) {
+    _instance.url = url;
+    _instance.headers = headers;
+    return _instance;
+  }
 
   Dio _dio() {
     return Dio(BaseOptions(headers: headers, receiveDataWhenStatusError: true,

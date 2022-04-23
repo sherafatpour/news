@@ -3,10 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:news/bindings/home_binding.dart';
-import 'package:news/home/home_page.dart';
+import 'package:news/bindings/container_binding.dart';
+import 'package:news/pages/container/container_page.dart';
 import 'package:news/util/app_pages.dart';
-import 'package:news/util/rout_name.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,13 +35,13 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.grey,
           fontFamily: "Vazir",
           brightness: Brightness.light),
-      home: const HomePage(),
+      home: const ContainerPage(),
       /*     storage.isLogin ? const ShopBasePage()
           : const AuthBasePage(
         page: Login(),
       ),*/
 
-      initialBinding: HomeBinding(),
+      initialBinding: ContainerBinding(),
       initialRoute: "/",
       getPages: AppPages.pages,
     );

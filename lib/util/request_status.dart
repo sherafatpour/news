@@ -1,0 +1,4 @@
+
+enum RequestStatus{
+  INITIALIZE,LOADING,LOADED,ERROR
+}
