@@ -45,7 +45,9 @@ class _HomePageState extends State<HomePage> {
                   style: Theme.of(context).textTheme.subtitle1)
             ],
           ))
-              : Container(
+              :logic.postsList.isEmpty?Center(
+          child: Text("محتوایی برای این صفحه موجود نیست!",
+              style: Theme.of(context).textTheme.subtitle1)): Container(
                   child: SingleChildScrollView(child: LatestNews(latest: logic.postsList.value,)),
                 );
     });

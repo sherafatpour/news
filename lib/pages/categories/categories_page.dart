@@ -18,9 +18,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
 
   @override
   Widget build(BuildContext context) {
-
-
-    if(logic.categoriesList.isEmpty) logic.getCategories();
+    if (logic.categoriesList.isEmpty) logic.getCategories();
 
     return Obx(() {
       return logic.status.value == RequestStatus.LOADING
@@ -29,34 +27,41 @@ class _CategoriesPageState extends State<CategoriesPage> {
       )
           : logic.status.value == RequestStatus.ERROR
           ? Center(
-              child: Column(
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        logic.getCategories();                    },
-                      icon: const Icon(
-                        Icons.refresh,
-                        color: Colors.black,
-                      )),
-                  Text(logic.errorMessage.value,
-                      style: Theme.of(context).textTheme.subtitle1)
-                ],
-              ))
-          : Container(
-        child: GridView.custom(
-            padding: EdgeInsets.all(10.0),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: (2 / 1),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
-            childrenDelegate: SliverChildListDelegate(
-              logic.categoriesList.value.map(
-                      (data) => CategoryItem(categoriesModel: data)
-              ).toList(),
-            )));
-
+          child: Column(
+            children: [
+              IconButton(
+                  onPressed: () {
+                    logic.getCategories();
+                  },
+                  icon: const Icon(
+                    Icons.refresh,
+                    color: Colors.black,
+                  )),
+              Text(logic.errorMessage.value,
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .subtitle1)
+            ],
+          ))
+          : logic.categoriesList.isEmpty ? Center(
+          child: Text("محتوایی برای این صفحه موجود نیست!",
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .subtitle1)) :GridView.custom(
+          padding: EdgeInsets.all(10.0),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: (2 / 1),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          childrenDelegate: SliverChildListDelegate(
+            logic.categoriesList.value.map(
+                    (data) => CategoryItem(categoriesModel: data)
+            ).toList(),
+          ));
     });
   }
 }

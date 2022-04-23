@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news/models/category_model.dart';
+import 'package:news/util/rout_name.dart';
 
 class CategoryItem extends StatelessWidget {
 
@@ -14,11 +15,13 @@ class CategoryItem extends StatelessWidget {
     double screenWidth = Get.width;
     double screenHeight = Get.height;
     double defaultSize = 16;
-    return GestureDetector(
-        onTap: () { /*Navigator.push(context, MaterialPageRoute(builder: (context)=> PostsOfCategory(categoriesModel: categoriesModel) ));*/},
+    return InkWell(
+        onTap: () {
+          Get.toNamed(RouteName.postsOfCategory,arguments: categoriesModel);
+          /*Navigator.push(context, MaterialPageRoute(builder: (context)=> PostsOfCategory(categoriesModel: categoriesModel) ));*/},
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            
             borderRadius: BorderRadius.all(
                Radius.circular(10),),
            /* boxShadow: [
