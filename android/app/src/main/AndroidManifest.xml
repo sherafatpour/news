@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.sherafatpour.news.news">
    <application
-        android:label="news"
+       android:usesCleartextTraffic="true"
+       android:label="news"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

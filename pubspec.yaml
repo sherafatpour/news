@@ -7,17 +7,22 @@ dependencies:
   flutter: { sdk: flutter }
   cupertino_icons: ^1.0.2
   flutter_localizations: { sdk: flutter }
-  flutter_html:
+  flutter_html: ^2.2.1
+  sqlite3_flutter_libs: ^0.5.0
   google_fonts:
   get:
   #get_storage: null
   dio:
+
   fluttertoast:
   flutter_screenutil:
   flutter_svg:
+  drift: ^1.5.0
+  path_provider: ^2.0.9
 dev_dependencies:
   flutter_test: { sdk: flutter }
-  flutter_lints:
+  drift_dev: ^1.5.2
+  build_runner: ^2.1.8
 flutter:
   uses-material-design: true
   assets: [assets/fonts/, assets/image/]

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news/models/post_model.dart';
+import 'package:news/util/rout_name.dart';
 
 
 class PostItem extends StatelessWidget {
@@ -20,6 +21,7 @@ class PostItem extends StatelessWidget {
     double screenHeight = Get.height;
     return InkWell(
       onTap: (){
+        Get.toNamed(RouteName.postDetail,arguments: post);
 
       },
       child: Container(

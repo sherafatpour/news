@@ -10,7 +10,6 @@ class Urls {
   static String comments = "comments?post=";
   static String categories = "categories";
   static String categoryPost = "categories=";
-
   static var urlStickyPosts = baseUrl+ postPrefix + "&"+sticky +"&"+embed;
   static var postsUrl =  baseUrl+ postPrefix +  "&"+embed;
   static var categoriesUrl =  baseUrl + categories;

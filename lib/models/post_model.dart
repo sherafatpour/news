@@ -1,5 +1,9 @@
+import 'package:get/get.dart';
+
 class PostModel {
   var id, title, date, content, cat, author_img, name, img;
+
+  final isFavorite = false.obs;
 
   PostModel(this.id, this.title, this.content, this.cat, this.author_img,
       this.name, this.img);
@@ -25,7 +29,7 @@ class PostModel {
         date = json['date'],
         content = json['content']['rendered'],
         cat = json['_embedded']['wp:term'][0][0]['name'],
-        author_img = json['_embedded']['author'][0]['avatar_urls']['96'],
+        //  author_img = json['_embedded']['author'][0]['avatar_urls']['96'];
         name = json['_embedded']['author'][0]['name'],
         img = json['_embedded']['wp:featuredmedia'][0]['source_url'];
 }
